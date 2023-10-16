@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>les appareils</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content padding>
+    <p>Ici apparaîtra la liste d'appareils</p>
+  </ion-content>
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label>
+      <ion-button ion-item *ngFor="let appareil of appareilsList" (click)="onLoadAppareil(appareil)">
+        <ion-icon name="power"[color]="appareil.isOn ? 'secondary':'danger'"></ion-icon>
+        {{appareil.name}}
+      </ion-button>
+    </ion-label>
+  </ion-item>
+</ion-list>
+  </ion-content>
+
+<ion-footer padding>
+  <p>bas de page</p>
+</ion-footer>
